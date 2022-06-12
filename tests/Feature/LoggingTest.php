@@ -39,5 +39,14 @@ class LoggingTest extends TestCase
         self::assertTrue(true);
     }
 
+    public function testChannel()
+    {
+        $slackLogger = Log::channel("slack");
+        $slackLogger->error("Hello Slack"); // send to slack channel
+
+        Log::info("Hello Laravel"); // send to default channel
+        self::assertTrue(true);
+    }
+
 
 }
