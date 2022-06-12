@@ -103,7 +103,7 @@ return [
             'driver' => 'monolog',
             'level' => env('LOG_LEVEL', 'debug'),
             'handler' => StreamHandler::class,
-            'formatter' => env('LOG_STDERR_FORMATTER'),
+            'formatter' => \Monolog\Formatter\JsonFormatter::class,
             'with' => [
                 'stream' => storage_path("logs/application.log"),
             ],
